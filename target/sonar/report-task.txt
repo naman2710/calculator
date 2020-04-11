@@ -1,0 +1,7 @@
+organization=naman2710
+projectKey=CI_1Ramdom
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.6674
+dashboardUrl=https://sonarcloud.io/dashboard?id=CI_1Ramdom
+ceTaskId=AXFp9FJd99fbsbikEyjS
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXFp9FJd99fbsbikEyjS

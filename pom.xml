@@ -9,17 +9,17 @@
 <version>0.0.1-SNAPSHOT</version>
 	<name>Calculator_WebApp</name>
 	<url>http://cal.ms.com</url>
-	<profiles>
+<profiles>
 <profile>
 <id>sonar</id>
 <activation>
 <activeByDefault>true</activeByDefault>
 </activation>
 <properties>
-<sonar.projectKey>CI_1</sonar.projectKey>
+<sonar.projectKey>CI_1Ramdom</sonar.projectKey>
   <sonar.organization>naman2710</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  <sonar.login>c1f1405d1af79366a486fa77d5d667aab4495b8f</sonar.login>
+  <sonar.login>afa6b0c6a409b649ecfb05c7348ca7ca89e23f7d</sonar.login>
 </properties>
 </profile>
 </profiles>
@@ -36,10 +36,10 @@
 		
 		</dependency>
 		<dependency>
-<groupId>org.sonarsource.scanner.maven</groupId>
-<artifactId>sonar-maven-plugin</artifactId>
-<version>3.7.0.1746</version>
-</dependency>
+		<groupId>org.sonarsource.scanner.maven</groupId>
+		<artifactId>sonar-maven-plugin</artifactId>
+		<version>3.7.0.1746</version>
+		</dependency>
 	</dependencies>
 	
 	<build>
