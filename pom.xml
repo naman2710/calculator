@@ -9,7 +9,20 @@
 <version>0.0.1-SNAPSHOT</version>
 	<name>Calculator_WebApp</name>
 	<url>http://cal.ms.com</url>
-	
+	<profiles>
+<profile>
+<id>sonar</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<sonar.projectKey>CI_1</sonar.projectKey>
+  <sonar.organization>naman2710</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.login>c1f1405d1af79366a486fa77d5d667aab4495b8f</sonar.login>
+</properties>
+</profile>
+</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -23,20 +36,12 @@
 		
 		</dependency>
 		<dependency>
-		<groupId>org.sonarsource.scanner.maven</groupId>
-		<artifactId>sonar-maven-plugin</artifactId>
-		<version>3.7.0.1746</version>
-		</dependency>
+<groupId>org.sonarsource.scanner.maven</groupId>
+<artifactId>sonar-maven-plugin</artifactId>
+<version>3.7.0.1746</version>
+</dependency>
 	</dependencies>
 	
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sonar.language>java</sonar.language>
-		<sonar.organization>naman2710</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>c1f1405d1af79366a486fa77d5d667aab4495b8f</sonar.login>
-		<sonar.projectKey>CI_1</sonar.projectKey>
-	</properties>
 	<build>
 		<finalName>com.ms.calc</finalName>
 		<plugins>
@@ -64,10 +69,10 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>3.2</version>
-			</plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.7.0.1746</version>
+      </plugin>
 		</plugins>
 	</build>
 	<distributionManagement>
