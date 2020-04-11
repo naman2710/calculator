@@ -22,12 +22,19 @@
 			<version>3.1.0</version>
 		
 		</dependency>
+		<dependency>
+		<groupId>org.sonarsource.scanner.maven</groupId>
+		<artifactId>sonar-maven-plugin</artifactId>
+		<version>3.7.0.1746</version>
+		</dependency>
 	</dependencies>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.language>java</sonar.language>
+		<sonar.organization>naman2710</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.login>c1f1405d1af79366a486fa77d5d667aab4495b8f</sonar.login>
 		<sonar.projectKey>CI_1</sonar.projectKey>
 	</properties>
 	<build>
