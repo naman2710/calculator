@@ -9,6 +9,7 @@
 <version>0.0.1-SNAPSHOT</version>
 	<name>Calculator_WebApp</name>
 	<url>http://cal.ms.com</url>
+	<!--
 <profiles>
 <profile>
 <id>sonar</id>
@@ -22,7 +23,7 @@
   <sonar.login>afa6b0c6a409b649ecfb05c7348ca7ca89e23f7d</sonar.login>
 </properties>
 </profile>
-</profiles>
+</profiles>-->
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -34,12 +35,12 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		
-		</dependency>
+		</dependency><!--
 		<dependency>
 		<groupId>org.sonarsource.scanner.maven</groupId>
 		<artifactId>sonar-maven-plugin</artifactId>
 		<version>3.7.0.1746</version>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 	
 	<build>
@@ -68,11 +69,11 @@
 					</archive>
 				</configuration>
 			</plugin>
-			<plugin>
+		<!--	<plugin>
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
         <version>3.7.0.1746</version>
-      </plugin>
+      </plugin>-->
 		</plugins>
 	</build>
 	<distributionManagement>
