@@ -1,0 +1,41 @@
+name: learning-github
+
+on: workflow_dispatch
+    
+jobs:
+   firstjob:  
+      runs-on: windows-2019
+      steps: 
+   
+      - name: checkout-my-code
+        uses: actions/checkout@v3.3.0
+      
+      - name: add msbuild path
+        uses: microsoft/setup-msbuild@v1.1
+      
+      - name: restore my nuget package from solution
+        run: nuget restore SampleSolution.sln
+      
+      - name: build my code using msbuild
+        run: msbuild SampleSolution.sln /p:Configuration=Release /p:DeployTarget=Package /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:DeployOnBuild=true
+        
+      - name: upload my build artifacts
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: buildartifact
+          path: '**/Release/netcoreapp3.1/WebApp.zip'
+     
+   deploy-mycode:
+      runs-on: windows-2019
+      environment:
+        name: "prod"
+      steps:
+       - name: deploy my application
+         uses: Azure/webapps-deploy@v2.2.4
+         with: 
+            app-name: testapp
+            publish-profile: $ {{ secrets.PUBLISHPROFILE }}
+            package: '**/Release/netcoreapp3.1/**'
+            
+     
+   
