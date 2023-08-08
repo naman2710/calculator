@@ -1,0 +1,11 @@
+name: 2ParentWorkflow
+
+on:
+  workflow_dispatch
+
+jobs:
+  childworkflow:
+    uses: ./.github/workflows/2ChildWorkflow.yml
+    with:
+      param1: "this is parameter 1"
+      param2: "this is parameter 2"
