@@ -1,0 +1,30 @@
+name: 1ConditionalJobFlow
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: step1
+        run: ech "this is the job1 code"
+  
+  success_notification:
+    needs: [job1]
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+     - name: workflow status
+       id: status
+       run: echo "::set-output name=status::success"
+  
+  fail_notification:
+    needs: [job1]
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+     - name: workflow status
+       id: status
+       run: echo "::set-output name=status::failure"
