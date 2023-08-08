@@ -1,0 +1,30 @@
+name: 6Variables.yml
+
+on:
+  workflow_dispatch
+
+env:
+  workflow_variable_1 : workflow variable
+  
+jobs:
+  variable_job:
+    runs-on : windows-latest
+    env:
+      job_variable_1 : job variable
+    steps:
+    - name: Step1
+      env: 
+        steps_variable: step variable
+      run : 
+        echo "Workflow-Level Variable Value is - ${{ env.workflow_variable_1 }}"
+        echo "Job-Level Variable Value is - ${{ env.job_variable_1 }}"
+        echo "Step-Level Variable Value is - ${{ env.steps_variable }}"
+
+  variable_job2:
+    runs-on : windows-latest
+    steps:
+    - name: Step2
+      run :
+        echo "Workflow-Level Variable Value is - ${{ env.workflow_variable_1 }}"
+        echo "Job-Level Variable Value is - ${{ env.job_variable_1 }}"
+        echo "Step-Level Variable Value is - ${{ env.steps_variable }}"
