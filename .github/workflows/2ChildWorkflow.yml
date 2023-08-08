@@ -1,0 +1,23 @@
+name: 2ChildWorkflow
+
+on:
+  workflow_call:
+    inputs:
+     param1:
+       description: 'Parameter 1'
+       required: true
+       type: string
+     param2:
+       description: 'Parameter 2'
+       required: true
+       type: string
+
+jobs:
+   childworkflow:
+     runs-on: ubuntu-latest
+      
+     steps:        
+       - name: Print Parameters from Parent Workflow
+         run: |
+           echo "Parameter 1: ${{ inputs.param1 }}"
+           echo "Parameter 2: ${{ inputs.param2 }}"
